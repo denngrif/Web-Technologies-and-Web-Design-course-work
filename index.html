@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Denys PASIIEVYCH — Blender Render Portfolio</title>
+  <meta name="description" content="Portfolio of finished 3D renders made in Blender: interiors, characters and environments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Home">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 6.4 3.5L12 11.3 5.6 7.8 12 4.3ZM5 9.5l6 3.3v6.5l-6-3.3V9.5Zm8 9.8v-6.5l6-3.3v6.5l-6 3.3Z" fill="currentColor"/>
+      </svg>
+      <span data-bind="name">Denys PASIIEVYCH</span>
+    </a>
+
+    <label class="search">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M10 3a7 7 0 1 0 4.2 12.6l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z" fill="currentColor"/></svg>
+      <input id="search" type="search" placeholder="Search projects" autocomplete="off" aria-label="Search projects">
+    </label>
+
+    <a class="btn btn-ghost topbar-contact" href="#" data-mail>Contact</a>
+  </header>
+
+  <main id="top">
+    <!-- COVER -->
+    <section class="cover" aria-label="Cover">
+      <img class="cover-img" id="heroImg" alt="Interior render made in Blender">
+      <div class="cover-shade"></div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="profile">
+      <img class="avatar" id="avatar" alt="">
+      <div class="who">
+        <h1 data-bind="name">Denys PASIIEVYCH</h1>
+        <p class="headline" id="headline">3D Artist</p>
+        <p class="meta"><span id="projectCount">0</span> projects<span class="sep" aria-hidden="true"></span>Blender</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="#" data-mail>Message</a>
+      </div>
+    </section>
+
+    <!-- TABS -->
+    <nav class="tabs" role="tablist" aria-label="Profile sections">
+      <button class="tab" role="tab" id="t-portfolio" aria-controls="tab-portfolio" aria-selected="true">Portfolio</button>
+      <button class="tab" role="tab" id="t-about" aria-controls="tab-about" aria-selected="false">About</button>
+    </nav>
+
+    <!-- PORTFOLIO -->
+    <section class="panel" id="tab-portfolio" role="tabpanel" aria-labelledby="t-portfolio">
+      <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No projects found.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="panel about" id="tab-about" role="tabpanel" aria-labelledby="t-about" hidden>
+      <h2>About me</h2>
+      <p>
+        I make 3D renders in Blender. Every piece here is a finished frame,
+        not a viewport screenshot: lighting, materials and composition taken all the way through.
+      </p>
+      <dl class="facts">
+        <div><dt>Software</dt><dd>Blender</dd></div>
+        <div><dt>Contact</dt><dd><a href="#" data-mail id="mailText">pasiyevych@gmail.com</a></dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> <span data-bind="name">Denys PASIIEVYCH</span>. All artwork is the property of the artist.</small>
+  </footer>
+
+  <!-- PROJECT VIEW -->
+  <div class="project" id="project" role="dialog" aria-modal="true" aria-label="Project" hidden>
+    <button class="round pj-close" id="pjClose" aria-label="Close">×</button>
+    <button class="round pj-prev" id="pjPrev" aria-label="Previous project">‹</button>
+    <button class="round pj-next" id="pjNext" aria-label="Next project">›</button>
+
+    <div class="pj-body">
+      <div class="pj-main">
+        <img id="pjImg" alt="">
+      </div>
+      <aside class="pj-side">
+        <h2 id="pjTitle"></h2>
+        <div class="pj-author">
+          <img id="pjAvatar" alt="">
+          <div>
+            <strong data-bind="name">Denys PASIIEVYCH</strong>
+            <span id="pjHeadline"></span>
+          </div>
+        </div>
+        <p class="pj-desc" id="pjDesc" hidden></p>
+        <dl class="pj-facts">
+          <div><dt>Software</dt><dd>Blender</dd></div>
+          <div><dt>Category</dt><dd id="pjTag"></dd></div>
+          <div><dt>Resolution</dt><dd id="pjRes"></dd></div>
+          <div><dt>Project</dt><dd id="pjCount"></dd></div>
+        </dl>
+        <a class="btn btn-primary pj-contact" href="#" data-mail>Message</a>
+      </aside>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
